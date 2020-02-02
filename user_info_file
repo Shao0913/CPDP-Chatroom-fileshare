@@ -1,0 +1,6 @@
+user1|password1|user2;user5;user6
+user2|password2|user1;user4;user6
+user3|password3|user1;user2;user6
+user4|password4|user2;user3;user5;user7
+user5|password5|user2;user1;user6
+user6|password6|user2;user5;user4
