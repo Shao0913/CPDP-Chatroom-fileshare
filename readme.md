@@ -1,6 +1,6 @@
-Project 2: A Messenger Application
+Project 2: A chatroom+fileshare server+client
 
-Author: Yuanhang Shao (ys18c@my.fsu.edu)
+Author: Yuanhang Shao
 
 Achieved features:
 1. The server only supports 30 clients connection at one time.
@@ -18,6 +18,10 @@ Achieved features:
 7. Make sure the "port" in "configration_file_c*" is as same as it in "configration_file_s1".
 
 8. Make sure the listen port (default 5520) for client is not used by other application (if used by other applications, it will should init fault or bind fault), other wise you have to change the code at `line 139, function messenger_client::messenger_client(const char* c), file ./src/messenger_client.cpp` -- change the `this->listen_port = 5520;` to the avaliable port number.
+
+9. Achieve chatroom connection and chat.
+
+10. Achieve chatroom file upload, download, share, and online edit.
 
 Functions:
 1. Using make command to compile the project.
@@ -62,6 +66,7 @@ Bugs and Limitation:
 2. There is instability for inviate friend. The specific case is when the first user is new register and send inviation to default user1. After user1 accept the inviation, the user1 will be able to send msg to new register, but it not always work when the new register send msg to user1, unless new register re-log.
 Example demo steps: register new client1, login client1 and user1, send inviation from client1 to user1, user1 accept and send inviation back to client1, then logout client1 and re-login client1, then client1 can send msg to new friend user1.
 3. (This bug fixed in second submission, please use second submission.) During the debug, the client that use the same machine that connect to server will fail to connect keep on login_loop by show "Line:  944. Bind socket failed." by using address "0.0.0.0".
+4. The online edit is not real-time online edit, it's using system call "vim".
 
 Key requriment:
 1. POSIX threads -- at the server
